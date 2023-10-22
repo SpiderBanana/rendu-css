@@ -1,0 +1,157 @@
+/* === BODY === */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* === NAVBAR === */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #333;
+    color: #fff;
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.logo {
+    margin-bottom: 10px;
+}
+
+.logo img {
+    max-height: 50px;
+    display: block;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+.menu li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.buttons .connexion, .buttons .inscription {
+    padding: 8px 16px;
+    border: none;
+    background-color: #646464;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.buttons .connexion:hover, .buttons .inscription:hover {
+    background-color: #949494;
+}
+
+/* === MAIN LAYOUT === */
+.layout {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* === TWEETS === */
+main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.tweet {
+    background-color: #fff;
+    border: 1px solid #e1e1e1;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.tweet:nth-child(3n) {
+    grid-column: span 2;
+}
+
+.tweet-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tweet-header img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.tweet-info span:first-child {
+    font-weight: bold;
+}
+
+/* === ASIDE === */
+aside {
+    position: sticky;
+    top: 2rem;
+    background-color: #fff;
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* === RESPONSIVE === */
+@media screen and (max-width: 800px) {
+    /* Navbar adjustments */
+    .navbar {
+        flex-direction: column;
+    }
+
+    .menu, .buttons {
+        justify-content: center;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    /* Layout adjustments */
+    .layout {
+        grid-template-columns: 1fr;
+    }
+    
+    aside {
+        order: -1;
+    }
+
+    /* Tweet adjustments */
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    .tweet:nth-child(3n) {
+        grid-column: span 1;
+    }
+}
